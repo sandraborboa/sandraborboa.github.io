@@ -1,0 +1,355 @@
+@font-face {
+    font-family: Mondwest;
+    src: url('fonts/Mondwest-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Neuebit;
+    src: url('fonts/NeueBit-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Variables */
+:root {
+    --bg-color: #fcfcfcfc;
+    --primary-color: #1a1a1c;
+    --secondary-color: #7a7a7a;
+    --bottom-margin: 0.5rem;
+    --bottom-margin-2: 1rem;
+    --line-height: 1.5;
+    --transition: 0.5s;
+    --section-padding: 60px;
+    --side-padding: 20px;
+}
+
+/* CSS Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    color: var(--primary-color);
+    list-style-type: none;
+    font-family: 'Neuebit';
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);   
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+body {
+    font-family: 'Mondwest';
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 5rem;
+    background-color: var(--bg-color);
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+
+nav h1 {
+    font-family: 'Mondwest';
+    color: var(--primary-color);
+}
+
+nav a {
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+nav ul {
+    display: flex;
+    gap: 1.9rem;
+}
+
+.burger-menu {
+    color: var(--primary-color);
+    font-size: 2rem;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    background: url('image1.png') no-repeat right center;
+    background-size: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    max-width: 68.75rem;
+    margin: auto;
+    padding: var(--section-padding) var(--side-padding);
+    min-height: 82vh;
+    
+}
+
+.bio {
+    width: 25rem;
+    padding: 0.625rem;
+    border-radius: 6px;
+    box-shadow: 0px 2px 15px 2px var(--primary-shadow);
+    text-align: left;
+}
+
+.bio h1 {
+    margin-bottom: var(--bottom-margin); 
+    font-size: 4rem;
+}
+
+/* More About Section */
+.more-about {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    max-width: 68.75rem;
+    margin: auto;
+    padding: var(--section-padding) var(--side-padding);
+}
+
+.self {
+    height: 34rem; 
+    border-radius: 16px;
+}
+
+.more-about p {
+    width: 34rem; 
+    padding: 0.625rem;
+    line-height: var(--line-height);
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+/* Projects Section */
+
+.projects {
+    background-color: var(--bg-color);
+    padding: var(--section-padding) var(--side-padding);
+    margin-top: 2rem;
+}
+
+.projects-title {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    padding-left: var(--side-padding); 
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: flex-start;
+    justify-content: space-between; 
+    gap: 1rem; 
+}
+
+.project-container {
+    text-align: center;
+    width: calc(25% - 1rem);
+    padding: 1rem;
+    box-sizing: border-box;
+    flex: 1 1 calc(25% - 1rem); 
+}
+
+.project-pic {
+    width: 70%; 
+}
+
+
+/* Social Media Buttons */
+.socials {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1%;
+    bottom: 40%;
+    justify-content: space-between;
+    gap: 1rem;
+    opacity: 40%;
+}
+
+.socicon {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Footer Section */
+footer {
+    background: url('greenhills.png') no-repeat center center;
+    background-size: cover;
+    height: 866px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem 0 0;
+    padding: var(--section-padding) var(--side-padding);
+}
+
+footer .invitation {
+    margin-top: 10rem;
+    font-size: 2rem;
+    color: #fff;
+}
+
+footer .disclaimer {
+    font-family: Neuebit;
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Scroll Button */
+.scroll-up {
+    position: fixed;
+    right: 0.5%;
+    bottom: 3%;
+    cursor: pointer;
+}
+
+.up-arrow {
+    width: 3rem;
+    height: 3rem;
+}
+
+/*responsive media queries */
+@media screen and (max-width: 720px) {
+    nav {
+        padding: 1.5rem 1rem;
+    }
+
+    nav ul {
+        position: fixed;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        top: 86px;
+        left: 10%;
+        width: 80%;
+        text-align: center;
+        transform: translateX(120%);
+        transition: transform 0.5s ease-in;
+    }
+
+    nav ul li {
+        margin: 8px;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    nav ul.show {
+        transform: translateX(0);
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: var(--section-padding) var(--side-padding);
+    }
+
+    .hero img {
+        height: 20rem;
+    }
+
+    .bio {
+        width: 90%;
+    }
+
+    .more-about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: var(--section-padding) var(--side-padding);
+    }
+
+    .self {
+        height: 15rem;
+    }
+
+    .more-about p {
+        width: 90%;
+        text-align: center;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .hero img {
+        height: 15rem;
+    }
+
+    .bio h1 {
+        font-size: 2.5rem;
+    }
+
+    .more-about p {
+        font-size: 1.25rem;
+    }
+
+    .projects-title {
+        font-size: 1.5rem;
+    }
+
+    .project-title {
+        font-size: 1rem;
+    }
+
+    .project-details {
+        font-size: 0.875rem;
+    }
+
+    footer .invitation {
+        font-size: 1.5rem;
+    }
+
+    footer .disclaimer {
+        font-size: 0.75rem;
+    }
+}
+
