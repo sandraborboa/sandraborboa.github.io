@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sandra Borboa">
+    <title>Sandra Borboa</title>
+    <link rel="stylesheet" href="./assets/css/styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>Sandra Borboa</h1>
+        <ul>
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#aboutme" class="nav-link">About Me</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+        </ul>
+        <button class="burger-menu" id="burger-menu">
+            <ion-icon class="bars" name="menu-outline"></ion-icon>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="bio animate__animated animate__fadeInLeft">
+            <h1 class="bio-title">Hello, World.<br>I'm Sandra.</h1>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="more-about" id="aboutme">
+        <img src="assets/imagenes/profilepic.png" alt="Sandra Borboa" class="self" loading="lazy">
+        <p>I am a web designer with a background in architecture, currently documenting my journey from designing physical spaces to crafting digital experiences. <br> I’m passionate about blending design with the possibilities of technology.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="projects-title">Some of my recent projects</h2>
+        <div class="projects-container">
+            <div class="project-container project-card">
+                <a href="#" target="_blank">
+                    <img src="./assets/imagenes/floppyred.png" alt="Red floppy disk" class="project-pic" />
+                </a>
+                <h3 class="project-title">Pinterest Twin</h3>
+                <p class="project-details">Created with HTML and CSS, as part of the Tecnolochicas PRO bootcamp.</p>
+            </div>
+            <div class="project-container project-card">
+                <a href="#" target="_blank">
+                    <img src="./assets/imagenes/floppyorange.png" alt="Orange floppy disk" class="project-pic"/>
+                </a>
+                <h3 class="project-title">Babyclass</h3>
+                <p class="project-details">Coming soon.</p>
+            </div>
+            <div class="project-container project-card">
+                <a href="#" target="_blank">
+                    <img src="./assets/imagenes/floppygreen.png" alt="Green floppy disk" class="project-pic"/>
+                </a>
+                <h3 class="project-title">Digital Garden</h3>
+                <p class="project-details">Coming soon.</p>
+            </div>
+            <div class="project-container project-card">
+                <a href="#" target="_blank">
+                    <img src="./assets/imagenes/floppyblue.png" alt="Blue floppy disk" class="project-pic"/>
+                </a>
+                <h3 class="project-title">Coming Soon</h3>
+                <p class="project-details">Coming soon.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <div class="socials">
+        <a href="https://github.com/sandraborboa" target="_blank"><img src="./assets/icons/github.png" alt="GitHub icon" class="socicon"></a>
+        <a href="https://www.linkedin.com/in/sandra-borboa/" target="_blank"><img src="./assets/icons/linkedin.png" alt="LinkedIn icon" class="socicon"></a>
+        <a href="https://www.instagram.com/sandraborboa" target="_blank"><img src="./assets/icons/instagram.png" alt="Instagram icon" class="socicon"></a>
+    </div>
+
+    <!-- Scroll Up Button -->
+    <i class="scroll-up" id="scroll-up">
+        <img src="./assets/icons/arrowup.png" class="socicon up-arrow" alt="Scroll icon">
+    </i>
+
+    <!-- Footer -->
+    <footer>
+        <p class="invitation">Working and studying online can get lonely.<br>Let's connect and create something amazing together.</p>
+        <p class="disclaimer">This is a Work in Process, built with &#x2661; by <a href="https://www.linkedin.com/in/sandra-borboa/" target="_blank">Sandra Borboa</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll('nav a');
+    
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    const offsetPosition = targetElement.offsetTop - document.querySelector('nav').offsetHeight;
+    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
